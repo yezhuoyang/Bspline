@@ -2,8 +2,9 @@
 // Created by 叶卓杨 on 2021/5/8.
 //
 
-#ifndef BSPLINE_READWRITE_H
-#define BSPLINE_READWRITE_H
+#pragma once
+
+
 #include <string>
 #include <vector>
 #include <Eigen/Core>
@@ -23,6 +24,3 @@ class readWrite {
 
 
 };
-
-
-#endif //BSPLINE_READINPUT_H
