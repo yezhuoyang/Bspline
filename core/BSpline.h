@@ -41,6 +41,10 @@ class BSplineCurve
         */
        Vector2d getSecondDiff(const Parameter& para) const;
 
+       /*
+        * Compute the curvature of a given point
+        */
+       double getCurvature(const Parameter& para) const;
 
 
        /*
@@ -59,11 +63,6 @@ class BSplineCurve
         */
        Vector2d getCurvCenter(const Parameter &para) const;
 
-
-       /*
-        * Compute the Curvature center
-        */
-       Vector2d getCurvCenter(const Parameter &para) const;
 
        /*
         * Compute the foot print
@@ -91,8 +90,9 @@ class BSplineCurve
 
         MatrixXd getFIntegralSq();
 
-    const vector<Vector2d>& getControls() const{return controls_;}
-    const vector<Vector2d>& getSamples() const{return positions_;}
+        const vector<Vector2d>& getControls() const{return controls_;}
+
+        const vector<Vector2d>& getSamples() const{return positions_;}
 
 
 
@@ -100,14 +100,22 @@ class BSplineCurve
    private:
 
     void clear(){
-        control_.clear();
+        controls_.clear();
         positions_.clear();
     }
 
     Parameter getPara(int index) const;
 
 
+    bool checkInside(Vector2d p);
 
+    /*
+     * Test if a point is Left|On|Right of an infinite line
+     */
+    int isLeft(Vector2d p0,Vector2d p1, Vector2d p2);
+
+
+private:
 
     double interal_;
     std::vector<Vector2d> controls_;
