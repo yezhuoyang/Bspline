@@ -4,7 +4,7 @@
 #include <Eigen/Core>
 #include <vector>
 #include <map>
-#include "BSplineBase.h"
+
 
 using namespace std;
 using namespace Eigen;

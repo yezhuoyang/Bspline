@@ -8,7 +8,7 @@
 #include <iostream>
 
 
-bool readWrite::readData(const string &filename, int &points) {
+bool readWrite::readData(const string &filename, vector<Vector2d>& points) {
     std::ifstream fin(filename);
     std::vector<double> coefficients;
     std::string line;
@@ -46,7 +46,7 @@ bool readWrite::readData(const string &filename, int &points) {
 }
 
 
-bool readWrite::writeDate(const string &filename, const int &points) {
+bool readWrite::writeDate(const string &filename, const vector<Vector2d>& points) {
     ofstream fout( filename.c_str());
     if( fout.fail() )
         return false;

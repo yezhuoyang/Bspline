@@ -10,7 +10,7 @@
 
 
 
-void SplineCurveFitting::initControlPoint(const vector<Vector2d>& points,
+void Spline_curve_fitting::initControlPoint(const vector<Vector2d>& points,
                                           vector<Vector2d>& controlPs,
                                           int controlNum,
                                           EInitType initType)
@@ -81,9 +81,9 @@ void SplineCurveFitting::initControlPoint(const vector<Vector2d>& points,
 
 }
 
-double SplineCurveFitting::apply(
+double Spline_curve_fitting::apply(
         const vector<Vector2d> &points,
-        CubicBSplineCurve &curve,
+        BSplineCurve &curve,
         int controlNum /* = 28 */,
         int maxIterNum  /*= 30 */,
         double alpha /* = 0.002 */,
@@ -94,7 +94,7 @@ double SplineCurveFitting::apply(
     controlNum = controlNum/4*4;
 
     // initialize the cube B-spline
-    CubicBSplineCurve* spline = &curve;
+    BSplineCurve * spline = &curve;
     vector<Vector2d> controlPs;
     initControlPoint(points, controlPs, controlNum, initType);
     spline->setNewControl( controlPs);

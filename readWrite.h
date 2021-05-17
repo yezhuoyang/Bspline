@@ -10,7 +10,7 @@
 #include <Eigen/Core>
 
 using namespace std;
-
+using namespace Eigen;
 
 
 
