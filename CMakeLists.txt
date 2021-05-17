@@ -1,13 +1,23 @@
 cmake_minimum_required(VERSION 3.19)
-project(core)
+project(spline_fitting)
 
 
 set(EIGEN_DIR  /Users/yezhuoyang/Desktop/eigen)
+
 include_directories(${EIGEN_DIR})
 
 
 set(ANN_DIR  /Users/yezhuoyang/Desktop/ann_1.1.2)
+
 include_directories(${ANN_DIR}/include)
+
+link_directories(${ANN_DIR}/lib)
+
+find_library(ANN
+        libANN.a
+        ${ANN_DIR}/lib)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/core)
 
 set(incs
         core/BSpline.h

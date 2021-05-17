@@ -15,7 +15,7 @@ using namespace std;
 
 
 class readWrite {
-
+public:
     static bool readData(const string& filename, vector<Vector2d>& points);
 
 
