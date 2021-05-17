@@ -8,8 +8,12 @@
 #include <iostream>
 
 
-
+/*
+ * Main function for Spline curve fitting
+ *
+ */
 int main(int argc, char *argv[]){
+
     char inpf[200],*input;
     argc--;
     argv++;					//Skip program name arg
@@ -38,11 +42,6 @@ int main(int argc, char *argv[]){
 //	CReadWriteAsc::writeAsc( inFileName, points);
     readWrite::writeDate( outFileName1, curve.getControls());
     readWrite::writeDate( outFileName2, curve.getSamples() );
-
-
-
-
-
 
 
 
