@@ -9,7 +9,7 @@
 
 
 bool readWrite::readData(const string &filename, vector<Vector2d>& points) {
-    std::ifstream fin(filename);
+    std::ifstream fin(filename.c_str());
     std::vector<double> coefficients;
     std::string line;
     int nRow = 0;

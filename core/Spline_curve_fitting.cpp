@@ -5,7 +5,6 @@
 #include "Spline_curve_fitting.h"
 #include <Eigen/SVD>
 
-
 #define TEMP_PI       3.14159265358979323846
 
 

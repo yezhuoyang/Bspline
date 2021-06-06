@@ -11,7 +11,7 @@ def readxy(inputfile):
 
 
 if __name__=='__main__':
-    inputname='/Users/yezhuoyang/Desktop/BSplineFitting/test_data/01.txt'
+    inputname='/Users/lez/Desktop/CGCourse/Bspline-main/Tests/01.txt'
     control_name=inputname+"_controls.txt"
     spline_name=inputname+"_spline.txt"
     x_origin,y_origin=readxy(inputname)
@@ -21,4 +21,4 @@ if __name__=='__main__':
     plt.scatter(x_control,y_control,marker='X',label="control points")
     plt.plot(x_spline,y_spline,c='#CD5C5C',label="Spline")
     plt.legend()
-    plt.savefig("/Users/yezhuoyang/BSpline/Tests/"+"01"+".png")
+    plt.savefig("/Users/lez/Desktop/CGCourse/Bspline-main/Tests/"+"01"+".png")

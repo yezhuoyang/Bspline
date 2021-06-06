@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.19)
 project(spline_fitting)
 
 
-set(EIGEN_DIR  /Users/yezhuoyang/Desktop/eigen)
+SET(CMAKE_C_COMPILER mingw32-gcc)
+SET(CMAKE_CXX_COMPILER mingw32-g++)
+
+set(EIGEN_DIR  /Users/lez/Desktop/CGCourse/Bspline-main/eigen-3.3.9)
 
 include_directories(${EIGEN_DIR})
 

@@ -2,8 +2,9 @@
 // Created by 叶卓杨 on 2021/5/8.
 //
 
-#include "Spline_curve_fitting.h"
-#include "readWrite.h"
+#include "core/BSpline.cpp"
+#include "core/Spline_curve_fitting.cpp"
+#include "readWrite.cpp"
 
 #include <iostream>
 
@@ -21,7 +22,8 @@ int main(int argc, char *argv[]){
     if(argc<1)
     {
         cout<<"Input file:"<<endl;
-        cin>>inpf;
+        //cin>>inpf;
+        strcpy(inpf,"01.txt");
         input = inpf;
     }
     else input    = argv[0];
@@ -36,6 +38,8 @@ int main(int argc, char *argv[]){
 
     std::vector<Vector2d> points;
     readWrite::readData( inFileName, points );
+//    for(int i=0;i<points.size();i++)
+//		printf("%f %f\n",points[i].x,points[i].y); 
 
     scf.apply(points, curve, 28, 50, 0.005, 0.005, 0.0001, SPHERE_INIT);
 
